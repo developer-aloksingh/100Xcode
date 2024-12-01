@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Real-Time Editor</title>
+ 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="./../style.css">
+ 	<script defer type="text/javascript" src="app.js"></script>
+ 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+	<script defer type="text/javascript" src="saveFile.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.0.0/split.min.js" integrity="sha512-tTsZnBXEzNdEaqUO9Ok8fUofS73xieiBa54pD/sxOSvayIgItM9MmEM0CnUjA13LDnJT22sfwmjf20+Bo2174g==" crossorigin="anonymous"></script>
+ </head>
+ <body>
+
+    
+
+
+
+
+ 	<div class="container split" style="background-color: black; margin: 10px;">
+		<header>
+			<div class="website">
+				<a href="./../">100Xcode - web IDE</a>
+			</div>
+		
+			<div class="account">
+				<a id="login" href="./login">Login</a>
+				<a id="register" href="./register">register</a>
+			</div>
+			<div class="user">
+				<a id="user" href="./user">User</a>
+			</div>
+		</header>
+
+		<button style="background-color: rgb(73, 140, 247); border-radius: 20px; margin-top: 5px; margin-bottom: 5px;" id="btn" onclick="saveFile()">
+			Save File
+		</button>
+				     					
+		<!-- Text area for Html Code  -->
+ 		<textarea id="htmlCode"  placeholder="Type HTML code here" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+ 		<!-- Text area for Css Code  -->
+		<textarea id="cssCode"  placeholder="Type CSS code here" spellcheck="false" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+ 		<!-- Text area for Javascript Code  -->
+		<textarea id="javascriptCode" spellcheck="false" placeholder="Type JavaScript code here" oninput="update(0)" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}if(event.keyCode==8){update(1);}"></textarea>
+ 	</div>
+ 	<div class="iframe-container split">
+		
+ 		<iframe id="viewer"></iframe>
+ 	</div>
+
+
+
+	 <footer></footer>
+        <div>Copyright © 2024 | 100Xcode</div>
+    </footer>
+	
+ </body>
+ </html>
+
